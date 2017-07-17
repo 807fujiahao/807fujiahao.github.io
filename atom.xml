@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://807fujiahao.github.io/"/>
-  <updated>2017-07-17T14:07:04.911Z</updated>
+  <updated>2017-07-17T15:09:10.054Z</updated>
   <id>https://807fujiahao.github.io/</id>
   
   <author>
@@ -16,20 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>喜欢和你搞基吗小鸡鸡</title>
+    <title>Same Tree</title>
     <link href="https://807fujiahao.github.io/2017/07/17/%E6%AC%A2%E5%92%8C%E4%BD%A0%E6%90%9E%E5%9F%BA%E5%90%97%E5%B0%8F%E9%B8%A1%E9%B8%A1/"/>
     <id>https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/</id>
-    <published>2017-07-17T14:06:21.000Z</published>
-    <updated>2017-07-17T14:07:04.911Z</updated>
+    <published>2017-07-17T14:06:00.000Z</published>
+    <updated>2017-07-17T15:09:10.054Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="程梦琪到底还喜欢和你搞基吗小鸡鸡"><a href="#程梦琪到底还喜欢和你搞基吗小鸡鸡" class="headerlink" title="程梦琪到底还喜欢和你搞基吗小鸡鸡"></a>程梦琪到底还喜欢和你搞基吗小鸡鸡</h4><p>程梦琪不太爱你了主要是因为你太短小了<br>小鸡鸡</p>
+    <content type="html"><![CDATA[<p>题目描述：</p>
+<blockquote>
+<p>Given two binary trees, write a function to check if they are equal or not.<br>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.</p>
+</blockquote>
+<p>解题思路：和二叉树先序遍历的思想一致，首先对于两棵树上的节点来说，先判断他们当前对应的节点的值是否相等，然后在去一直向下判断左子树节点是否一致，左子树判断无误之后，判断右子树对应的节点的值是否一致。</p>
+<p>下面是java的代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class SameTree &#123;</div><div class="line"></div><div class="line">    public boolean isSameTree(TreeNode p, TreeNode q) &#123;</div><div class="line">        if (p == null &amp;&amp; q == null) return true;</div><div class="line">        // 两个节点对应的结构不相同或者对应的值不想等都返回false</div><div class="line">        if (p == null || q == null || p.val != q.val) return false;</div><div class="line">        return isSameTree(p.left,q.left) &amp;&amp; isSameTree(p.right,q.right);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;程梦琪到底还喜欢和你搞基吗小鸡鸡&quot;&gt;&lt;a href=&quot;#程梦琪到底还喜欢和你搞基吗小鸡鸡&quot; class=&quot;headerlink&quot; title=&quot;程梦琪到底还喜欢和你搞基吗小鸡鸡&quot;&gt;&lt;/a&gt;程梦琪到底还喜欢和你搞基吗小鸡鸡&lt;/h4&gt;&lt;p&gt;程梦琪不太爱你了主要是因为你
+      &lt;p&gt;题目描述：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given two binary trees, write a function to check if they are equal or not.&lt;br&gt;Two binary trees are considered 
     
     </summary>
+    
+      <category term="leetcode" scheme="https://807fujiahao.github.io/categories/leetcode/"/>
     
     
   </entry>
