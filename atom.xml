@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  <subtitle>�ҵĲ���</subtitle>
+  <title>blog</title>
+  <subtitle>我的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://807fujiahao.github.io/"/>
@@ -9,7 +9,7 @@
   <id>https://807fujiahao.github.io/</id>
   
   <author>
-    <name>Fujiahao</name>
+    <name>逍遥</name>
     
   </author>
   
