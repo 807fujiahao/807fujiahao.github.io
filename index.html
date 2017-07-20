@@ -268,6 +268,158 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/21/二叉树路径问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="逍遥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/picture.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/21/二叉树路径问题/" itemprop="url">二叉树路径问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T00:15:00+08:00">
+                2017-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/21/二叉树路径问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/21/二叉树路径问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/07/21/二叉树路径问题/" class="leancloud_visitors" data-flag-title="二叉树路径问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本篇博文将以leetcode上的二叉树路径问题来讲述二叉树路径相关的问题。</p>
+<p>题目描述：</p>
+<p>`Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p>
+<p>For example:</p>
+<p>Given the below binary tree and  sum = 22,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">      5</div><div class="line">     / \</div><div class="line">    4   8</div><div class="line">   /   / \</div><div class="line">  11  13  4</div><div class="line"> /  \      \</div><div class="line">7    2      1</div></pre></td></tr></table></figure>
+<p>return true, as there exist a root-to-leaf path <code>5-&gt;4-&gt;11-&gt;2</code> which sum is 22.`</p>
+<p>很容易想到的一种方法就是将一条从根节点都叶子节点的值相加起来然后与sum进行比较就可以确定是否含有，所有节点之后等于sum的路径。下面是实现代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPathSum</span><span class="params">(TreeNode root, <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">boolean</span> ans = getResult(root,<span class="number">0</span>,sum);</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">getResult</span><span class="params">(TreeNode node, <span class="keyword">int</span> pathSum,<span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = pathSum+node.val;</div><div class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span> &amp;&amp; node.right == <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="keyword">return</span> res == sum;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span>) <span class="keyword">return</span> getResult(node.right,res,sum);</div><div class="line">    <span class="keyword">if</span> (node.right == <span class="keyword">null</span>) <span class="keyword">return</span> getResult(node.left,res,sum);</div><div class="line">    <span class="keyword">return</span> getResult(node.left,pathSum+node.val,sum) || getResult(node.right,res,sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的方法实现简单，容易理解。但是仔细想一下是否还有更加简单的实现呢？下面是leetcode上面看到的实现代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">betterSolution</span><span class="params">(TreeNode root,<span class="keyword">int</span> sum)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>)</div><div class="line">        <span class="keyword">return</span> root.val == sum;</div><div class="line">    <span class="keyword">return</span> betterSolution(root.left,sum-root.val) || betterSolution(root.right,sum-root.val);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>它的思想是和刚刚的思想相反，我们在从根节点到叶子节点之前，我们用sum去减去每一个节点的值。最后到叶子节点的时候判断叶子节点的值和sum剩下的值是否相等，如果相等就返回true。</p>
+<p>下面这个题目是上面的第二个版本：</p>
+<p>`Given a binary tree and a sum, find all root-to-leaf paths where each path’s sum equals the given sum.</p>
+<p>sum = 22</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">      5</div><div class="line">     / \</div><div class="line">    4   8</div><div class="line">   /   / \</div><div class="line">  11  13  4</div><div class="line"> /  \    / \</div><div class="line">7    2  5   1</div></pre></td></tr></table></figure>
+<p>return</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">   [5,4,11,2],</div><div class="line">   [5,8,4,5]</div><div class="line">]</div><div class="line">`</div></pre></td></tr></table></figure>
+<p>理解上面那道题之后实现这道题非常简单，下面是实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, <span class="keyword">int</span> sum) &#123;</div><div class="line">    List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    List&lt;Integer&gt; curr = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    getResult(root,res,curr,sum);</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getResult</span><span class="params">(TreeNode node, List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; curr, <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">    curr.add(node.val);</div><div class="line">    <span class="keyword">if</span> (node.left == <span class="keyword">null</span> &amp;&amp; node.right == <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="keyword">if</span> (node.val == sum)</div><div class="line">            res.add(<span class="keyword">new</span> ArrayList&lt;&gt;(curr));</div><div class="line">    &#125;</div><div class="line">    getResult(node.left,res,curr,sum-node.val);</div><div class="line">    getResult(node.right,res,curr,sum-node.val);</div><div class="line">    curr.remove(curr.size()-<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/19/二叉树层序遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -819,7 +971,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
