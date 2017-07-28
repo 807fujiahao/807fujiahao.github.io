@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://807fujiahao.github.io/"/>
-  <updated>2017-07-20T16:35:52.824Z</updated>
+  <updated>2017-07-28T03:46:04.761Z</updated>
   <id>https://807fujiahao.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>插入排序</title>
+    <link href="https://807fujiahao.github.io/2017/07/28/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    <id>https://807fujiahao.github.io/2017/07/28/插入排序/</id>
+    <published>2017-07-28T03:22:00.000Z</published>
+    <updated>2017-07-28T03:46:04.761Z</updated>
+    
+    <content type="html"><![CDATA[<p>在介绍插入排序之前我们来看一下生活中的这样一个场景：</p>
+<p>桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们需要把抽取的牌插入到左手的正确位置（将牌放入左手之后，左手的牌必须满足某种排列顺序）。</p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>有了上面那个生活中的场景理解插入排序也比较的容易了。假设我们使用插入排序对数组进行升序排列。</p>
+<p>插入排序的思想就是：将数组分为两个部分，左边的部分已经排序（对应左手的扑克牌），右边部分是待排序的（对应桌面上的扑克牌）。其实的时候左边的变为长度为1，也就是元素，然后通过一个循环对右边未排序的部分进行扫描。每当遇到一个数，就将它插入到左边排序部分的正确位置（对应将扑克牌插入到正确的位置）。循环结束，数组就排好序了。</p>
+<p>实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T extends Comparable&lt;T&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(T[] nums)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</div><div class="line">        T tmp = nums[i];</div><div class="line">        <span class="comment">// 将比插入的数要大的数往前移动</span></div><div class="line">        <span class="keyword">for</span> (j = i; j &gt; <span class="number">0</span> &amp;&amp; tmp.compareTo(nums[j-<span class="number">1</span>]) &lt; <span class="number">0</span>;j--)</div><div class="line">            nums[j] = nums[j-<span class="number">1</span>];</div><div class="line">        <span class="comment">// 插入到数组中正确的位置</span></div><div class="line">        nums[j] = tmp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="单链表的插入排序"><a href="#单链表的插入排序" class="headerlink" title="单链表的插入排序"></a>单链表的插入排序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">listInsertionSort</span><span class="params">(ListNode head)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>)</div><div class="line">        <span class="keyword">return</span> head;</div><div class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">    dummy.next = head;</div><div class="line">    ListNode curr = head.next, pre = head;</div><div class="line">    <span class="keyword">while</span> (curr != <span class="keyword">null</span>)&#123;</div><div class="line">        ListNode x = dummy.next, y = dummy;</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">while</span> (x != curr)&#123;</div><div class="line">            <span class="keyword">if</span> (x.val &gt; curr.val)&#123;</div><div class="line">                pre.next = curr.next;</div><div class="line">                curr.next = x;</div><div class="line">                y.next = curr;</div><div class="line">                curr = pre.next;</div><div class="line">                flag = <span class="keyword">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            y = x;</div><div class="line">            x = x.next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (flag)&#123;</div><div class="line">            pre = curr;</div><div class="line">            curr = curr.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> dummy.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当链表插入排序和数组不同的是，数组插入正确位置的时候是从后面往前面扫描，而单链表是从前面往后面扫描。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在介绍插入排序之前我们来看一下生活中的这样一个场景：&lt;/p&gt;
+&lt;p&gt;桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://807fujiahao.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>二叉树路径问题</title>
     <link href="https://807fujiahao.github.io/2017/07/21/%E4%BA%8C%E5%8F%89%E6%A0%91%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/"/>
     <id>https://807fujiahao.github.io/2017/07/21/二叉树路径问题/</id>
     <published>2017-07-20T16:15:00.000Z</published>
-    <updated>2017-07-20T16:35:52.824Z</updated>
+    <updated>2017-07-21T04:10:36.444Z</updated>
     
     <content type="html"><![CDATA[<p>本篇博文将以leetcode上的二叉树路径问题来讲述二叉树路径相关的问题。</p>
 <p>题目描述：</p>

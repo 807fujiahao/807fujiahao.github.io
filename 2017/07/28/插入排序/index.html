@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
+<meta name="description" content="在介绍插入排序之前我们来看一下生活中的这样一个场景： 桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们需要把抽取的牌插入到左手的正确位置（将牌放入左手之后，左手的牌必须满足某种排列顺序）。 插入排序有了上面那个生活中的场景理解插入排序也比较的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Same Tree">
-<meta property="og:url" content="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/index.html">
+<meta property="og:title" content="插入排序">
+<meta property="og:url" content="https://807fujiahao.github.io/2017/07/28/插入排序/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
-<meta property="og:updated_time" content="2017-07-17T15:09:10.054Z">
+<meta property="og:description" content="在介绍插入排序之前我们来看一下生活中的这样一个场景： 桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们需要把抽取的牌插入到左手的正确位置（将牌放入左手之后，左手的牌必须满足某种排列顺序）。 插入排序有了上面那个生活中的场景理解插入排序也比较的">
+<meta property="og:updated_time" content="2017-07-28T03:46:04.761Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Same Tree">
-<meta name="twitter:description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
+<meta name="twitter:title" content="插入排序">
+<meta name="twitter:description" content="在介绍插入排序之前我们来看一下生活中的这样一个场景： 桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们需要把抽取的牌插入到左手的正确位置（将牌放入左手之后，左手的牌必须满足某种排列顺序）。 插入排序有了上面那个生活中的场景理解插入排序也比较的">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/"/>
+  <link rel="canonical" href="https://807fujiahao.github.io/2017/07/28/插入排序/"/>
 
 
 
 
 
-  <title>Same Tree | blog</title>
+  <title>插入排序 | blog</title>
   
 
 
@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/">
+    <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/28/插入排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="逍遥">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Same Tree</h1>
+          <h1 class="post-title" itemprop="name headline">插入排序</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T22:06:00+08:00">
-                2017-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T11:22:00+08:00">
+                2017-07-28
               </time>
             
 
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
+                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构与算法</span>
                   </a>
                 </span>
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/17/欢和你搞基吗小鸡鸡/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/28/插入排序/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/17/欢和你搞基吗小鸡鸡/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/28/插入排序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/07/17/欢和你搞基吗小鸡鸡/" class="leancloud_visitors" data-flag-title="Same Tree">
+             <span id="/2017/07/28/插入排序/" class="leancloud_visitors" data-flag-title="插入排序">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,12 +375,13 @@
       
 
       
-        <p>题目描述：</p>
-<blockquote>
-<p>Given two binary trees, write a function to check if they are equal or not.<br>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.</p>
-</blockquote>
-<p>解题思路：和二叉树先序遍历的思想一致，首先对于两棵树上的节点来说，先判断他们当前对应的节点的值是否相等，然后在去一直向下判断左子树节点是否一致，左子树判断无误之后，判断右子树对应的节点的值是否一致。</p>
-<p>下面是java的代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class SameTree &#123;</div><div class="line"></div><div class="line">    public boolean isSameTree(TreeNode p, TreeNode q) &#123;</div><div class="line">        if (p == null &amp;&amp; q == null) return true;</div><div class="line">        // 两个节点对应的结构不相同或者对应的值不想等都返回false</div><div class="line">        if (p == null || q == null || p.val != q.val) return false;</div><div class="line">        return isSameTree(p.left,q.left) &amp;&amp; isSameTree(p.right,q.right);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>在介绍插入排序之前我们来看一下生活中的这样一个场景：</p>
+<p>桌子上面有一堆背面朝上的扑克牌，我们用右手去从桌子上面抽取一张扑克牌放到左手上去。有一个这样的规定，左手上面的扑克牌必须按照某种顺序排列好（升序或者降序），于是当我们用右手从桌面上抽取一个扑克牌的时候，我们需要把抽取的牌插入到左手的正确位置（将牌放入左手之后，左手的牌必须满足某种排列顺序）。</p>
+<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p>有了上面那个生活中的场景理解插入排序也比较的容易了。假设我们使用插入排序对数组进行升序排列。</p>
+<p>插入排序的思想就是：将数组分为两个部分，左边的部分已经排序（对应左手的扑克牌），右边部分是待排序的（对应桌面上的扑克牌）。其实的时候左边的变为长度为1，也就是元素，然后通过一个循环对右边未排序的部分进行扫描。每当遇到一个数，就将它插入到左边排序部分的正确位置（对应将扑克牌插入到正确的位置）。循环结束，数组就排好序了。</p>
+<p>实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span>&lt;T extends Comparable&lt;T&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(T[] nums)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</div><div class="line">        T tmp = nums[i];</div><div class="line">        <span class="comment">// 将比插入的数要大的数往前移动</span></div><div class="line">        <span class="keyword">for</span> (j = i; j &gt; <span class="number">0</span> &amp;&amp; tmp.compareTo(nums[j-<span class="number">1</span>]) &lt; <span class="number">0</span>;j--)</div><div class="line">            nums[j] = nums[j-<span class="number">1</span>];</div><div class="line">        <span class="comment">// 插入到数组中正确的位置</span></div><div class="line">        nums[j] = tmp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="单链表的插入排序"><a href="#单链表的插入排序" class="headerlink" title="单链表的插入排序"></a>单链表的插入排序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">listInsertionSort</span><span class="params">(ListNode head)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>)</div><div class="line">        <span class="keyword">return</span> head;</div><div class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</div><div class="line">    dummy.next = head;</div><div class="line">    ListNode curr = head.next, pre = head;</div><div class="line">    <span class="keyword">while</span> (curr != <span class="keyword">null</span>)&#123;</div><div class="line">        ListNode x = dummy.next, y = dummy;</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">while</span> (x != curr)&#123;</div><div class="line">            <span class="keyword">if</span> (x.val &gt; curr.val)&#123;</div><div class="line">                pre.next = curr.next;</div><div class="line">                curr.next = x;</div><div class="line">                y.next = curr;</div><div class="line">                curr = pre.next;</div><div class="line">                flag = <span class="keyword">false</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">            y = x;</div><div class="line">            x = x.next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (flag)&#123;</div><div class="line">            pre = curr;</div><div class="line">            curr = curr.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> dummy.next;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当链表插入排序和数组不同的是，数组插入正确位置的时候是从后面往前面扫描，而单链表是从前面往后面扫描。</p>
 
       
     </div>
@@ -417,8 +418,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/17/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/07/21/二叉树路径问题/" rel="next" title="二叉树路径问题">
+                <i class="fa fa-chevron-left"></i> 二叉树路径问题
               </a>
             
           </div>
@@ -426,10 +427,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/19/二叉树层序遍历/" rel="prev" title="二叉树层序遍历">
-                二叉树层序遍历 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -484,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/picture.jpg"
@@ -545,6 +551,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#插入排序"><span class="nav-number">1.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单链表的插入排序"><span class="nav-number">2.</span> <span class="nav-text">单链表的插入排序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -692,9 +714,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/';
-          this.page.identifier = '2017/07/17/欢和你搞基吗小鸡鸡/';
-          this.page.title = 'Same Tree';
+          this.page.url = 'https://807fujiahao.github.io/2017/07/28/插入排序/';
+          this.page.identifier = '2017/07/28/插入排序/';
+          this.page.title = '插入排序';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-807fujiahao-github-io.disqus.com/embed.js';
