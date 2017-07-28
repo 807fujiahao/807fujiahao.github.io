@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://807fujiahao.github.io/"/>
-  <updated>2017-07-28T03:46:04.761Z</updated>
+  <updated>2017-07-28T05:34:32.936Z</updated>
   <id>https://807fujiahao.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>冒泡排序</title>
+    <link href="https://807fujiahao.github.io/2017/07/28/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    <id>https://807fujiahao.github.io/2017/07/28/冒泡排序/</id>
+    <published>2017-07-28T03:49:00.000Z</published>
+    <updated>2017-07-28T05:34:32.936Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于一个数组arr[0…n]我们可以把数组中的每一个元素都比作一个气泡，每个气泡都有不同的轻重（对应数组中的每一个元素的数值大小）。我们规定一个轻的气泡不能排在重的气泡上面，所以我们从下到上（对应0到n）扫描数组，将违背规则的气泡互换(重的气泡在轻的气泡下面)，这样重的气泡就实现了“上冒”。</p>
+<p>下面是代码实现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length-<span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[j-<span class="number">1</span>] &gt; nums[j])&#123;</div><div class="line">                <span class="keyword">int</span> tmp = nums[j-<span class="number">1</span>];</div><div class="line">                nums[j-<span class="number">1</span>] = nums[j];</div><div class="line">                nums[j] = tmp;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>优化1：</p>
+<p>当我们扫描数组的时候发现气泡未发生上冒（也就是数据的交换），这说明了气泡顺序都符合了规则，那么我们就停止循环。</p>
+<p>实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length-<span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[j-<span class="number">1</span>] &gt; nums[j])&#123;</div><div class="line">                <span class="keyword">int</span> tmp = nums[j-<span class="number">1</span>];</div><div class="line">                nums[j-<span class="number">1</span>] = nums[j];</div><div class="line">                nums[j] = tmp;</div><div class="line">                flag =<span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (flag)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>优化2：</p>
+<p>我们假设数组arr[0..i]的数据已经是排好序的数据，上次扫描arr[i+1…n]区间最后发生交换的位置j，很显然arr[i+1…j]这个区间的数据也已经排好序，否则就会发生元素的交换，所以下次扫描使得时候可以由区间arr[i…n]缩减到arr[j…n]。</p>
+<p>实现代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort3</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> lastSwapPos, swapTemp = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length-<span class="number">1</span>; i++) &#123;</div><div class="line">        lastSwapPos = swapTemp;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = nums.length-<span class="number">1</span>; j &gt; lastSwapPos; j--) &#123;</div><div class="line">            <span class="keyword">if</span> (nums[j-<span class="number">1</span>] &gt; nums[j])&#123;</div><div class="line">                <span class="keyword">int</span> tmp = nums[j-<span class="number">1</span>];</div><div class="line">                nums[j-<span class="number">1</span>] = nums[j];</div><div class="line">                nums[j] = tmp;</div><div class="line"></div><div class="line">                <span class="comment">// 记录最后一次发生交换的位置索引</span></div><div class="line">                swapTemp = j;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 证明没有元素发生交换，则说明数组已经有序</span></div><div class="line">        <span class="keyword">if</span> (lastSwapPos == swapTemp)</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于一个数组arr[0…n]我们可以把数组中的每一个元素都比作一个气泡，每个气泡都有不同的轻重（对应数组中的每一个元素的数值大小）。我们规定一个轻的气泡不能排在重的气泡上面，所以我们从下到上（对应0到n）扫描数组，将违背规则的气泡互换(重的气泡在轻的气泡下面)，这样重的气泡
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="https://807fujiahao.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>插入排序</title>
