@@ -95,16 +95,16 @@
 
 
 
-<meta name="description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
+<meta name="description" content="为什么会有cookie？我们都知道HTTP是一种无状态的协议，所以仅仅靠HTTP是无法得知这次请求访问的用户上次是否上次访问过还是第一次访问。从程序设计的的角度来说新的用户访问和上次已经访问过的用户访问数据效率差别挺大的。因为如果一个用户在很短的时间内频繁的访问同一个资源我们可以针对将这个资源做缓存，这样可以大大的提高效率。这个之后我们就用cookie来解决这个问题。 理解cookie定义 通俗的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Same Tree">
-<meta property="og:url" content="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/index.html">
+<meta property="og:title" content="cookie和session">
+<meta property="og:url" content="https://807fujiahao.github.io/2017/07/31/cookie和session/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
-<meta property="og:updated_time" content="2017-07-17T15:09:10.054Z">
+<meta property="og:description" content="为什么会有cookie？我们都知道HTTP是一种无状态的协议，所以仅仅靠HTTP是无法得知这次请求访问的用户上次是否上次访问过还是第一次访问。从程序设计的的角度来说新的用户访问和上次已经访问过的用户访问数据效率差别挺大的。因为如果一个用户在很短的时间内频繁的访问同一个资源我们可以针对将这个资源做缓存，这样可以大大的提高效率。这个之后我们就用cookie来解决这个问题。 理解cookie定义 通俗的">
+<meta property="og:updated_time" content="2017-07-31T05:43:09.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Same Tree">
-<meta name="twitter:description" content="题目描述：  Given two binary trees, write a function to check if they are equal or not.Two binary trees are considered equal if they are structurally identical and the nodes have the same value.  解题思路：和二叉树">
+<meta name="twitter:title" content="cookie和session">
+<meta name="twitter:description" content="为什么会有cookie？我们都知道HTTP是一种无状态的协议，所以仅仅靠HTTP是无法得知这次请求访问的用户上次是否上次访问过还是第一次访问。从程序设计的的角度来说新的用户访问和上次已经访问过的用户访问数据效率差别挺大的。因为如果一个用户在很短的时间内频繁的访问同一个资源我们可以针对将这个资源做缓存，这样可以大大的提高效率。这个之后我们就用cookie来解决这个问题。 理解cookie定义 通俗的">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/"/>
+  <link rel="canonical" href="https://807fujiahao.github.io/2017/07/31/cookie和session/"/>
 
 
 
 
 
-  <title>Same Tree | blog</title>
+  <title>cookie和session | blog</title>
   
 
 
@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/">
+    <link itemprop="mainEntityOfPage" href="https://807fujiahao.github.io/2017/07/31/cookie和session/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="逍遥">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Same Tree</h1>
+          <h1 class="post-title" itemprop="name headline">cookie和session</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-17T22:06:00+08:00">
-                2017-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-31T11:16:00+08:00">
+                2017-07-31
               </time>
             
 
@@ -319,8 +319,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
+                  <a href="/categories/javaEE/" itemprop="url" rel="index">
+                    <span itemprop="name">javaEE</span>
                   </a>
                 </span>
 
@@ -337,9 +337,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/17/欢和你搞基吗小鸡鸡/#comments" itemprop="discussionUrl">
+                <a href="/2017/07/31/cookie和session/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/07/17/欢和你搞基吗小鸡鸡/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/07/31/cookie和session/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -347,7 +347,7 @@
 
           
           
-             <span id="/2017/07/17/欢和你搞基吗小鸡鸡/" class="leancloud_visitors" data-flag-title="Same Tree">
+             <span id="/2017/07/31/cookie和session/" class="leancloud_visitors" data-flag-title="cookie和session">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,12 +375,31 @@
       
 
       
-        <p>题目描述：</p>
-<blockquote>
-<p>Given two binary trees, write a function to check if they are equal or not.<br>Two binary trees are considered equal if they are structurally identical and the nodes have the same value.</p>
-</blockquote>
-<p>解题思路：和二叉树先序遍历的思想一致，首先对于两棵树上的节点来说，先判断他们当前对应的节点的值是否相等，然后在去一直向下判断左子树节点是否一致，左子树判断无误之后，判断右子树对应的节点的值是否一致。</p>
-<p>下面是java的代码实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class SameTree &#123;</div><div class="line"></div><div class="line">    public boolean isSameTree(TreeNode p, TreeNode q) &#123;</div><div class="line">        if (p == null &amp;&amp; q == null) return true;</div><div class="line">        // 两个节点对应的结构不相同或者对应的值不想等都返回false</div><div class="line">        if (p == null || q == null || p.val != q.val) return false;</div><div class="line">        return isSameTree(p.left,q.left) &amp;&amp; isSameTree(p.right,q.right);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h4 id="为什么会有cookie？"><a href="#为什么会有cookie？" class="headerlink" title="为什么会有cookie？"></a>为什么会有cookie？</h4><p>我们都知道HTTP是一种无状态的协议，所以仅仅靠HTTP是无法得知这次请求访问的用户上次是否上次访问过还是第一次访问。从程序设计的的角度来说新的用户访问和上次已经访问过的用户访问数据效率差别挺大的。因为如果一个用户在很短的时间内频繁的访问同一个资源我们可以针对将这个资源做缓存，这样可以大大的提高效率。这个之后我们就用cookie来解决这个问题。</p>
+<h4 id="理解cookie"><a href="#理解cookie" class="headerlink" title="理解cookie"></a>理解cookie</h4><p><strong>定义</strong></p>
+<p>通俗的来说当用户第一次访问服务器的时候，服务器会给客户端浏览器返回一些key/value键值对来记录一些数据，通过给这些键值对加上一些限制条件。在符合条件时这个用户下一次再来访问服务器，数据又会被带回服务器，这样服务器就知道了这次访问的用户不是“新来”的用户。</p>
+<p>这个有点像我们我们第一次去超市里面购物的时候办了一张购物卡，购物卡里面有自己的个人信息，当我们下次再去超市里面购物的时候我们直接就可以用购物卡去购物了。</p>
+<p><strong>cookie的使用</strong></p>
+<p>添加cookie</p>
+<p>HttpServletReponse中有一个方法是addCookie利用这个方法我们就可以直接向客户端添加相应的cookie</p>
+<p>获取cookie，下面是一段常用的获取cookie的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getCookie</span><span class="params">(Cookie[] cookies,String name)</span></span>&#123;</div><div class="line">  <span class="keyword">if</span>(cookies != <span class="keyword">null</span>)&#123;</div><div class="line">    <span class="keyword">for</span>(Cookie cookie : cookies)&#123;</div><div class="line">      <span class="keyword">if</span>(name.equals(cookie.getName()))</div><div class="line">        retrun cookie.getValue();   </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>cookie的使用场景</strong></p>
+<ul>
+<li>购物场景利用cookie来保存用户购物车里面添加的商品</li>
+<li>用一些网站有记住密码的功能，利用cookie来保存用户的密码</li>
+</ul>
+<p><strong>cookie的安全问题</strong></p>
+<p>cookie是通过HTTP头把服务器端用保存的数据从服务器端保存到客户端，所以再又从客户端传回到服务器端，所以数据都存在客户端浏览器里面。这带来一个很严重的问题，我们通过浏览器的一些插件就可以所以的添加，删除和修改cookie，如果把隐私数据保存在这里就会带来一个很严重的问题。这个时候是session就出现了。</p>
+<h4 id="什么是session？"><a href="#什么是session？" class="headerlink" title="什么是session？"></a>什么是session？</h4><p>我们前面已经知道了cookie可以让服务器跟踪每个客户端的访问，但是每次客户端访问必须回传这些cookie，那么就会出现这样一个问题：如果回传的cookie很多就会很占用网络带宽。而session出现就很好的解决了这个问题。</p>
+<p><strong>定义</strong></p>
+<p>我们先来看看这样一个场景。我们想去银行存钱和取钱，第一次我们取银行的时候，银行会帮我们帮一张卡。一张卡对应着唯一的一个人，下次我们再去银行取钱的时候我们只要用这张卡去就行了。</p>
+<p>客户端和服务端交互的时候只需要回传一个带有ID的cookie，这个ID是客户端第一次访问服务器的时候生产的，一个客户端对应着一个唯一的ID。当客户端有了这个ID之后，客户端只有回传这个ID就行了。在默认的情况下ID的NAME为JSESSIONID的一个cookie。、</p>
+<p><strong>session的使用</strong></p>
+<p>我们用过HttpServletRequest对象就可以拿到session对象。</p>
+<p><strong>session的使用场景</strong></p>
+<p>有些网站要求用户必须要登录之后才可以使用一些功能（比如csdn需要登录之后才可以写博客），当时有些用户可能直接在浏览器中输入地址来使用该功能，这显然是我们不能允许的。既然一个session可以识别一个唯一的用户，我们就可以利用session做权限的控制。</p>
+<h4 id="cookie和session的缺点"><a href="#cookie和session的缺点" class="headerlink" title="cookie和session的缺点"></a>cookie和session的缺点</h4><p>对于cookie来说太多的cookie将会增加客户端和服务器交互的次数，同时cookie的安全性不如session那么好。但是对于一个大型的分布式的系统来说每个机器之间的session很难实现共享，而cookie因为数据都保存在客户端，所以两次请求到不同的服务器上去也是最新的值。</p>
 
       
     </div>
@@ -417,15 +436,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/07/28/快速排序/" rel="next" title="快速排序">
+                <i class="fa fa-chevron-left"></i> 快速排序
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/19/二叉树层序遍历/" rel="prev" title="二叉树层序遍历">
-                二叉树层序遍历 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/picture.jpg"
@@ -541,6 +569,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么会有cookie？"><span class="nav-number">1.</span> <span class="nav-text">为什么会有cookie？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#理解cookie"><span class="nav-number">2.</span> <span class="nav-text">理解cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是session？"><span class="nav-number">3.</span> <span class="nav-text">什么是session？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie和session的缺点"><span class="nav-number">4.</span> <span class="nav-text">cookie和session的缺点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -688,9 +732,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://807fujiahao.github.io/2017/07/17/欢和你搞基吗小鸡鸡/';
-          this.page.identifier = '2017/07/17/欢和你搞基吗小鸡鸡/';
-          this.page.title = 'Same Tree';
+          this.page.url = 'https://807fujiahao.github.io/2017/07/31/cookie和session/';
+          this.page.identifier = '2017/07/31/cookie和session/';
+          this.page.title = 'cookie和session';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://https-807fujiahao-github-io.disqus.com/embed.js';
